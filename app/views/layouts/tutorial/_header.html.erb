@@ -1,0 +1,27 @@
+<!-- Want to use this template whether auth'd or not so I've got some code to determine how to render below -->
+<header>
+  <% if not current_user %>
+    <ul class="mini-nav">
+         <li>
+           <%= button_to "signup", signup_path, {:class => "btn btn-primary", :method => "get"} %>
+         </li>
+       </ul>
+    <ul class="mini-nav">
+         <li>
+           <%= button_to "login", login_path, {:class => "btn", :method => "get"} %>
+         </li>
+       </ul>
+  <% else %>
+    <ul class="mini-nav">
+      <li>
+          <%= button_to "<- back to app", home_dashboard_index_path, {:class => "btn btn-primary", :method => "get"} %>
+        </li>
+    </ul>
+  <% end %>
+
+</header>
+
+  <div id="modal_div" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myAlert" aria-hidden="true">
+  </div>
+
+</script>
